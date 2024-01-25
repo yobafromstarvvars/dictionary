@@ -1,0 +1,35 @@
+<div>
+    {% for image in images %}
+        {{ image }}
+    {% endfor %}
+</div>
+
+<p>
+    <span class="def_num">{{ def_num }}</span>
+    [<span class="grammar_info">{{ grammar_info }}</span>] : 
+    <span class="definition">{{ definition }}</span>
+    <span class="popularity">{{ popularity }}</span>
+    <span class="is_singular">{{ is_singular }}</span>
+    <span class="is_count">{{ is_count}}</span>
+    <span class="label">{{ label }}</span>
+</p>
+
+<ul>
+{% for example in examples %}
+    <li>{{ example }}</li>
+{% endfor %}
+</ul>
+
+<h6>Synonyms:</h6>
+<ul>
+{% for synonym in synonyms %}
+    <li>{{ synonym }}</li>
+{% endfor %}
+</ul>
+
+<h6>Antonyms:</h6>
+<ul>
+{% for antonym in antonyms %}
+    <li>{{ antonym }}</li>
+{% endfor %}
+</ul>
