@@ -1,20 +1,2 @@
-[2024-01-20 19:15:37,708 - logger - INFO] Word in progress: get
-[2024-01-20 19:15:37,738 - logger - DEBUG] got: ipa not found
-[2024-01-20 19:15:37,738 - logger - DEBUG] got: 'def' tag not found
-[2024-01-20 19:15:37,739 - logger - DEBUG] gotten: ipa not found
-[2024-01-20 19:15:37,739 - logger - DEBUG] gotten: 'def' tag not found
-[2024-01-20 19:15:37,739 - logger - DEBUG] get-go: 'def' tag not found
-[2024-01-20 19:15:37,742 - logger - DEBUG] all get-out: ipa not found
-[2024-01-20 19:15:37,743 - logger - DEBUG] all get-out: 'def' tag not found
-[2024-01-20 19:15:37,743 - logger - DEBUG] above: ipa not found
-[2024-01-20 19:15:37,753 - logger - DEBUG] acquaint*ed: ipa not found
-[2024-01-20 19:15:51,807 - logger - INFO] Word in progress: get
-[2024-01-20 19:15:51,853 - logger - DEBUG] got: ipa not found
-[2024-01-20 19:15:51,853 - logger - DEBUG] got: 'def' tag not found
-[2024-01-20 19:15:51,853 - logger - DEBUG] gotten: ipa not found
-[2024-01-20 19:15:51,854 - logger - DEBUG] gotten: 'def' tag not found
-[2024-01-20 19:15:51,854 - logger - DEBUG] get-go: 'def' tag not found
-[2024-01-20 19:15:51,857 - logger - DEBUG] all get-out: ipa not found
-[2024-01-20 19:15:51,857 - logger - DEBUG] all get-out: 'def' tag not found
-[2024-01-20 19:15:51,858 - logger - DEBUG] above: ipa not found
-[2024-01-20 19:15:51,881 - logger - DEBUG] acquaint*ed: ipa not found
+[2024-03-19 01:39:17,308 - logger - INFO(68)] Word in progress: get
+[2024-03-19 01:39:17,313 - logger - DEBUG(126)] get: ipa not found

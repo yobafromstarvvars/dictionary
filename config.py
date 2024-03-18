@@ -4,7 +4,8 @@ import logging
 learners_key = "eb51743f-c840-4b3f-bbe5-d3c42c4e8883" # Learner's dictionary
 ithesaurus_key = "63aebef2-b89f-4040-8124-c723ec526a96" # Intermediate Thesaurus
 
-learners_api_name = "learners"
+# Words that is in the api url
+learners_api_name = "learners"  
 thesaurus_api_name = "ithesaurus"
 
 # res = requests.get("https://api.dictionaryapi.dev/api/v2/entries/en/hello")
@@ -19,7 +20,7 @@ dict_url = "https://www.britannica.com/dictionary/"
 
 def setup_logger(logger_name, log_file, level=logging.DEBUG):
     l = logging.getLogger(logger_name)
-    formatter = logging.Formatter('[%(asctime)s - %(name)s - %(levelname)s] %(message)s')
+    formatter = logging.Formatter('[%(asctime)s - %(name)s - %(levelname)s(%(lineno)d)] %(message)s')
     fileHandler = logging.FileHandler(log_file, mode='w')
     fileHandler.setFormatter(formatter)
     streamHandler = logging.StreamHandler()
