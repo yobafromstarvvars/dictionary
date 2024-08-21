@@ -8,7 +8,12 @@ from config import *
 
 
 def get_word_data(search_word, params={"key": learners_key}, api_name=learners_api_name):
-    # Get word data from a dictionary with api
+    """
+    Get word data from a dictionary with api
+    search_word: word to search
+    params: GET parameters
+    api_name: part of api url
+    """
 
     # Build a query
     query = "/".join([api_url, api_name, "json", search_word]) + "?"
@@ -69,7 +74,7 @@ for entry in word_list:
 
     # Prepare dictionary to store all the necessary word data
     description = {
-        "word": "",
+        "word": "",  # ok
         "part_of_speech": "",
         "ipa": "",
         "images": [],
@@ -90,9 +95,10 @@ for entry in word_list:
     }
 
     # Get word data from dictionary api
-    # word_data = get_word_data(entry[0])
+    # word_data = get_word_data(entry[0], {"key": ithesaurus_key}, api_name=thesaurus_api_name)
+    word_data = get_word_data(entry[0])
 
-    word_data = get_word_data_fake("thesaurus_get.json")
+    # word_data = get_word_data_fake("thesaurus_get.json")
     
 
     # Go through api data and get necessary data 
@@ -104,19 +110,24 @@ for entry in word_list:
             dl.debug(f"word data length: {len(word_data)}")
 
             for word in word_data:
+
+                dl.debug(word)
                 # description["word"] = word['meta']['app-shortdef']['hw']
                 # description["part_of_speech"] = word['meta']['app-shortdef']['fl']
                 # description["definitions"] = word['meta']['app-shortdef']['def']
                 # dl.debug(word["hwi"])
 
-                # Some words don't have def. Don't add them
+                # Some words don't have def (definition). Don't add them
                 if "def" not in word:
                     l.debug(f"{word['hwi']['hw']}: 'def' tag not found")
                     continue
 
+                # Get the searched word from the api
                 description["word"] = word["hwi"]["hw"]
 
+                # Gram: 
                 if "gram" in word:
+                    dl.debug(word["gram"])
                     description["is_count"] = word["gram"]
 
                 try:
@@ -223,37 +234,37 @@ for entry in word_list:
                                 #             synonyms.append(synonym["wd"])
                                 #         word_definition["synonyms"].append(synonyms)
 
-
+                                # Sense number - how common the defenition is used
                                 if "sn" in sense_data:    
                                     word_definition["number"] = sense_data["sn"]
                                     
-
+                                # sense-specific grammar - informal, written, formal etc.
                                 if "sgram" in sense_data:
                                     word_definition["label"] = sense_data["sgram"]
                                 
-            
+
                                 for info in sense_body:
+                                    # info is ['vis', [{'t': "I'm not sure I {it}got{/it} the math in our homework assignment."}]]
+                                    # first element is either 'text' or 'vis'
+                                    # 'text' - definition text
+                                    # 'vis' - example
+                                    dl.debug(info)
 
                                     info_type = info[0]
                                     info_data = info[1]
-
-                                    dl.debug(info)
 
                                     # Definition text
                                     if info_type == "text":
                                         
                                         dl.debug(info_data)
-
                                         word_definition["text"] = info_data
-
-
                                     # Examples
                                     elif info_type == "vis":
                                         
                                         for example in info_data:
                                             dl.debug(example)
                                             word_definition["examples"] = example["t"]
-
+                                    
                                     elif info_type == "uns":
                                         pass
 
@@ -303,7 +314,7 @@ for entry in word_list:
                                 # examples = [e for e in sense[1]["dt"][1][1]] # Create a list of examples
                                 # pprint.pprint(examples)
                         pprint.pprint(word_definition)
-                        sys.exit()
+                        
                         print()
                         print()
 

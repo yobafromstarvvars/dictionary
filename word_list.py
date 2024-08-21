@@ -16,7 +16,8 @@ Pull data from google document with words
 
 word_list = {
     # ("apple", "noun"),
+    ("car", "noun"),
     # ("hit", "verb"),
     # ("drink", "noun"),
-    ("get", ""),
+    # ("get", ""),
 }

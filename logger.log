@@ -1,2 +1,10 @@
-[2024-03-19 01:39:17,308 - logger - INFO(68)] Word in progress: get
-[2024-03-19 01:39:17,313 - logger - DEBUG(126)] get: ipa not found
+[2024-03-20 00:11:32,395 - logger - INFO(73)] Word in progress: car
+[2024-03-20 00:11:32,932 - logger - DEBUG(134)] car bomb: ipa not found
+[2024-03-20 00:11:32,950 - logger - DEBUG(134)] car boot sale: ipa not found
+[2024-03-20 00:11:32,959 - logger - DEBUG(134)] car park: ipa not found
+[2024-03-20 00:11:32,980 - logger - DEBUG(134)] car pool: ipa not found
+[2024-03-20 00:11:32,988 - logger - DEBUG(134)] car seat: ipa not found
+[2024-03-20 00:11:33,002 - logger - DEBUG(134)] car wash: ipa not found
+[2024-03-20 00:11:33,027 - logger - DEBUG(134)] buffet car: ipa not found
+[2024-03-20 00:11:33,038 - logger - DEBUG(134)] bumper car: ipa not found
+[2024-03-20 00:11:33,052 - logger - DEBUG(134)] cable car: ipa not found
